@@ -1,0 +1,22 @@
+.backcolor{
+    background-color: aquamarine;
+}
+
+body{
+    padding: 0!important;
+    border: 0!important;
+}
+
+.custom-navbar{
+    background-color: #031359;
+}
+
+.navbar-logo-custom{
+    max-width: 100px;
+    max-height: 50px;
+}
+
+.container-custom{
+    padding: 0!important;
+    border: 0!important;
+}
