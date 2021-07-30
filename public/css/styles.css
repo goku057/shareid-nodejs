@@ -1,3 +1,8 @@
+html{
+    /* font-size: 62.5%; 16px = 62.5 = 10px = 1rem */
+    /* box-sizing: border-box; */
+}
+
 .backcolor{
     background-color: aquamarine;
 }
@@ -7,8 +12,10 @@ body{
     border: 0!important;
 }
 
+/* working with navbar */
 .custom-navbar{
-    background-color: #031359;
+    background-color: #141b38!important;
+    
 }
 
 .navbar-logo-custom{
@@ -19,4 +26,70 @@ body{
 .container-custom{
     padding: 0!important;
     border: 0!important;
+    /* background-color: #161C22; */
 }
+
+#nav-right{
+    align-self: right;
+    flex:right;
+}
+
+.custom-bg{
+    background-image: url("/public/images/shareidbg1.jpg");
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.custom-header{
+    font-size: 157%;
+    font-family: garamond, serif;
+    color: rgb(41, 53, 78);
+}
+
+.custom-searchbar{
+    width: 500px;
+}
+
+
+/* card css */
+/*  
+  .card-custom {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    max-height: 100px!important;
+  }
+  
+  .title-custom {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  .button-custom {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .a-custom {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  .button-custom:hover, .a-custom:hover {
+    opacity: 0.7;
+  } */
