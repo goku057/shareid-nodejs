@@ -109,3 +109,7 @@ body{
     align-items: center;
     font-size: 40px;
   }
+  #custom_create-post-row{
+    background-color: #EEEEEE;
+    border-radius: 30px;
+  }
