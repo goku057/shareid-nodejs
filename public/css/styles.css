@@ -34,7 +34,7 @@ body{
     flex:right;
 }
 
-.custom-bg{
+.custom-home-bg{
     background-image: url("/public/images/shareidbg1.jpg");
     background-color: #cccccc;
     height: 100%;

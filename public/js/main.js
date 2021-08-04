@@ -6,4 +6,4 @@ function openSideBar(){
 function closeMenu (){ 
       document.querySelector(".sidebar").classList.remove("open");
     //   console.log(e.target.className);
-  }
+}

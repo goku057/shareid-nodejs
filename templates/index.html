@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
-  <div class="ui container fluid custom-bg" id="home-container" >
+  <div class="ui container fluid custom-home-bg" id="home-container" >
     <nav class="ui menu  large inverted custom-navbar" id="main-nav">
       <a class="active red item" onclick="togSidebar()">
        <i class="icon bars"></i>
@@ -26,7 +26,14 @@
       
       <div class="right menu">
         <a href="" class="item">Message</a>
-        <a href="" class="item">Notification</a>
+        <div class="ui dropdown simple item ">
+          <i class="globe icon"></i>
+          <div class="menu">
+            <a class="item">Omuk posted</a>
+            <a class="item">Buy premium</a>
+            <a class="item">LoL id availble</a>
+          </div>
+        </div>
         <div class="ui dropdown item">
           <img src="/public/images/khoma.png" alt="" class="ui very  mini circular image" style="max-height:30px"> <i class="dropdown icon"></i>
           <div class="menu">
@@ -38,7 +45,8 @@
         
       </div>
       
-    </nav><div class="ui left demo vertical inverted sidebar labeled icon menu" >
+    </nav>
+    <div class="ui left demo vertical inverted sidebar labeled icon menu" >
       <a class="item">
         <i class="icon gamepad"></i>
         Gaming
@@ -47,6 +55,7 @@
         <i class="tv icon"></i>
         Streaming
       </a>
+      
     </div>
     <div class="ui equal width center aligned padded grid">
       <div class="row">
@@ -78,3 +87,5 @@
 <script type="text/javascript" src="/public/js/cjquery.js">
   
 </script>
+
+
