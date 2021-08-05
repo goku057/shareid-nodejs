@@ -1,0 +1,135 @@
+<%- include("./partials/header.ejs") %> 
+
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container">
+    <%- include("./partials/navbar.ejs") %> 
+
+
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+
+    </div>
+    <div class="dashboard_image_div">
+      <img src="/public/images/khoma.png" alt="" class="ui circular image" style="max-height:250px;">
+    </div>
+    <div class="dashboard_name_div">
+      <br><br><br>
+      <div class="ui header">
+        <span class="custom_header_name_dashboard">Name</span>
+      </div>
+    </div>
+
+    <!-- <div class="dashboard_createPost_div">
+
+
+      <div class="ui three column divided grid">
+        <div class="row">
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <div class="ui form">
+              <form class="ui form">
+                <div class="field" >
+                  <label style="color: aliceblue;">Add a post</label>
+                    <input type="text" name="status" placeholder="Type here, What's on your mind.">
+                </div>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label style="color: aliceblue;">Anything else</label>
+                  </div>
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+              </form>
+            </div>
+      
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div> -->
+
+
+    <table class="ui celled table" style="text-align: center;">
+      <thead>
+        <tr><th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Phone</th>
+        <th>Email</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td data-label="Fname">Zahid</td>
+          <td data-label="Lname">Malek</td>
+          <td data-label="DoB">07.05.2000</td>
+          <td data-label="phone">00011110000111</td>
+          <td data-label="mail">2something@gg.com</td>
+        </tr>
+        <!-- <tr>
+          <td data-label="Currency">Jill</td>
+          <td data-label="Earnings or Sold">26</td>
+          <td data-label="Debt/Yet to pay">Engineer</td>
+        </tr>
+        <tr>
+          <td data-label="Currency">Elyse</td>
+          <td data-label="Earnings or Sold">24</td>
+          <td data-label="Debt/Yet to pay">Designer</td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <table class="ui selectable inverted table" style="opacity:  0.9;">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Status</th>
+          <th class="right aligned">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NULL</td>
+          <td>NULL</td>
+          <td class="right aligned">None</td>
+        </tr>
+        <tr>
+          <td>NULL</td>
+          <td>NULL</td>
+          <td class="right aligned">None</td>
+        </tr>
+        <tr>
+          <td>NULL</td>
+          <td>NULL</td>
+          <td class="right aligned">None</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+</body>
+</html>
+<%- include("./partials/footer.ejs") %> 
