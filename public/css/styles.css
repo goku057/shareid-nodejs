@@ -93,3 +93,21 @@ body{
   .button-custom:hover, .a-custom:hover {
     opacity: 0.7;
   } */
+
+
+
+
+
+  /* DASHBOARD CSS */
+  .dashboard_image_div,.dashboard_name_div{
+    display: flex;
+    justify-content: center;
+  }
+  .custom_header_name_dashboard{
+    color: aliceblue;
+  }
+  .dashboard_createPost_div{
+    
+
+    justify-content: center;
+  }
