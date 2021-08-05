@@ -113,3 +113,6 @@ body{
     background-color: #EEEEEE;
     border-radius: 30px;
   }
+  #post-card{
+    width:100%;
+  }
