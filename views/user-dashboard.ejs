@@ -1,0 +1,107 @@
+<%- include("./partials/header.ejs") %> 
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container">
+    <%- include("./partials/navbar.ejs") %> 
+
+
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+
+    </div>
+    <div class="dashboard_image_div">
+      <img src="/public/images/khoma.png" alt="" class="ui circular image" style="max-height:250px;">
+    </div>
+    <div class="dashboard_name_div">
+      <br><br><br>
+      <div class="ui header">
+        <span class="custom_header_name_dashboard">Name</span>
+      </div>
+    </div>
+
+    <div class="dashboard_createPost_div">
+
+
+      <div class="ui three column divided grid">
+        <div class="row">
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <div class="ui form">
+              <form class="ui form">
+                <div class="field" >
+                  <label style="color: aliceblue;">Add a post</label>
+                    <input type="text" name="status" placeholder="Type here, What's on your mind.">
+                </div>
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label style="color: aliceblue;">Anything else</label>
+                  </div>
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+              </form>
+            </div>
+      
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+    <table class="ui selectable inverted table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Status</th>
+          <th class="right aligned">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Currency</td>
+          <td>400Tk BDT</td>
+          <td class="right aligned">None</td>
+        </tr>
+        <tr>
+          <td>Earnings or Sold</td>
+          <td>1500Tk BDT</td>
+          <td class="right aligned">Requires call</td>
+        </tr>
+        <tr>
+          <td>Debt/Yet to pay</td>
+          <td>250Tk BDT</td>
+          <td class="right aligned">None</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+</body>
+
+</html>
+
+<%- include("./partials/footer.ejs") %> 
