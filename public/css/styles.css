@@ -35,11 +35,12 @@ body{
 }
 
 .custom-home-bg{
-    background-image: url("/public/images/shareidbg1.jpg");
+    background-image: url("../images/shareidbg1.jpg");
     background-color: #cccccc;
     height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: repeat-y; */
+    background-attachment: fixed;
     background-size: cover;
     position: relative;
 }
@@ -54,6 +55,10 @@ body{
     width: 500px;
 }
 
+.custom-admin-panel-container{
+  background-color: azure;
+  min-height: 400px;
+}
 
 /* card css */
 /*  
@@ -110,4 +115,24 @@ body{
     
 
     justify-content: center;
+  }
+
+  /* Al-Amin */
+  #create-post-header{
+    display: flex;
+    flex-direction: row;
+    background-color: #EEEEEE;
+    justify-content: center;
+    height: 130px;
+    border-radius: 30px;
+    align-items: center;
+    font-size: 40px;
+  }
+  #custom_create-post-row{
+    background-color: #EEEEEE;
+    border-radius: 30px;
+  }
+  #post-card{
+    width:100%;
+
   }

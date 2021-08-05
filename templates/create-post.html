@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../public/css/styles.css">
+</head>
+
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container">
+    <nav class="ui menu  large inverted custom-navbar" id="main-nav">
+      <a class="active red item" onclick="togSidebar()">
+        <i class="icon bars"></i>
+      </a>
+      <label class="item">
+        ShareID
+      </label>
+
+      <div class="ui icon input  right menu  custom-searchbar">
+        <input type="text" placeholder="Search...">
+        <i class="inverted circular search link icon"></i>
+      </div>
+
+      <div class="right menu">
+        <a href="" class="item">Message</a>
+        <div class="ui dropdown simple item ">
+          <i class="globe icon"></i>
+          <div class="menu">
+            <a class="item">Omuk posted</a>
+            <a class="item">Buy premium</a>
+            <a class="item">LoL id availble</a>
+          </div>
+        </div>
+        <div class="ui dropdown item">
+          <img src="../public/images/khoma.png" alt="" class="ui very  mini circular image" style="max-height:30px"> <i
+            class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">Dashboard</a>
+            <a class="item">Account Information</a>
+            <a class="item">Logout</a>
+          </div>
+        </div>
+
+      </div>
+
+    </nav>
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+
+    </div>
+    <div class="ui equal width center aligned padded grid">
+      <div class="row">
+
+      </div>
+      <div class="row">
+        <div class="column ">
+          <div class="ui huge header"><span class="custom-header">Share ID</span> <br> One stop to buy you desired
+            accounts</div>
+        </div>
+        <div class="column">
+
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="column">Custom Row</div> -->
+      </div>
+
+    </div>
+    <div class="ui container">
+      <div class="ui grid">
+        <div class="row">
+          <div class="four wide column"></div>
+          <div class="eight wide column">
+            <div id="create-post-header">
+              <span>Create new post</span>
+            </div>
+          </div>
+          <div class="ui four wide column"></div>
+        </div>
+        <div class="row" id="custom_create-post-row">
+          <div class="two wide column"></div>
+          <div class="twelve wide column">
+            <div class="ui huge header"><span>Create new post</span></div>
+            <div class="ui form">
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Title</label>
+                  <input type="text" placeholder="Enter your post title">
+                </div>
+              </div>
+              <div class="inline fields">
+                <label for="category">Category</label>:</label>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="category" checked="" tabindex="0" class="hidden">
+                    <label>Sell</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="category" tabindex="0" class="hidden">
+                    <label>Share</label>
+                  </div>
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Price</label>
+                  <input type="text" placeholder="Enter your price">
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Username</label>
+                  <input type="text" placeholder="Enter your username">
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Password</label>
+                  <input type="text" placeholder="Enter your password">
+                </div>
+              </div>
+              <div class="field">
+                <label>Description</label>
+                <textarea placeholder="Add description"></textarea>
+              </div>
+            </div>
+            <Button class="ui fluid primary button">Post</Button>
+          </div>
+        </div>
+        <div class="two wide column"></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>
+<!-- <script src="http://semantic-ui.com/javascript/library/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+  integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- <script src="http://semantic-ui.com/javascript/library/jquery.min.js"></script> -->
+<script type="text/javascript" src="../public/js/cjquery.js">
+
+</script>
