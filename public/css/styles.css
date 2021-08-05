@@ -55,6 +55,72 @@ body{
 }
 
 
+
+/* message start */
+
+.cmessage-body {
+  margin: 0 auto;
+  
+  padding: 0 20px;
+}
+
+
+.cmessage-container {
+  border: 2px solid #000000;
+  background-color:#2599c0;
+  border-radius: 5px;
+ 
+  padding: 10px;
+  margin: 10px 0;
+  /*align-items: center;
+  justify-content: center;*/
+}
+
+.cmessage-darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.cmessage-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cmessage-container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.cmessage-container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.cmessage-time-right {
+  float: right;
+  color: #aaa;
+}
+
+.cmessage-time-left {
+  float: left;
+  color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* card css */
 /*  
   .card-custom {
