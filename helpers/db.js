@@ -5,7 +5,7 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "",
-    database: "shareidnode",
+    database: "shareidnjs",
     connectionLimit: 10
 });
 //binding database for using async and await

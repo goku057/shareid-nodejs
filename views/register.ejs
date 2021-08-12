@@ -1,0 +1,84 @@
+<%- include("./partials/header.ejs") %> 
+
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container">
+    <%- include("./partials/navbar.ejs") %> 
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+
+    </div>
+    <div class="ui equal width center aligned padded grid">
+      <div class="row">
+
+      </div>
+      <div class="row">
+        <!-- <div class="column ">
+          <div class="ui huge header"><span class="custom-header">Share ID</span> <br> One stop to buy you desired
+            accounts</div>
+        </div> -->
+        <div class="column">
+
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="column">Custom Row</div> -->
+      </div>
+
+    </div>
+    <div class="ui container">
+      <div class="ui grid">
+        <div class="row">
+          <div class="four wide column"></div>
+          <div class="eight wide column">
+            <div id="create-post-header">
+              <span>Create Account </span>
+            </div>
+          </div>
+          <div class="ui four wide column"></div>
+        </div>
+        <div class="row" id="custom_create-post-row">
+          <div class="two wide column"></div>
+          <div class="twelve wide column">
+            <div class="ui huge header"><span>Create new post</span></div>
+            <form class="ui form" action="/register" method="post">
+              
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Username</label>
+                  <input type="text" placeholder="Enter your username" name="userName">
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Email</label>
+                  <input type="email" placeholder="Enter your email" name="email">
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Password</label>
+                  <input type="text" placeholder="Enter your password" name="pass">
+                </div>
+              </div>
+              <Button class="ui fluid primary button">Register</Button>
+            </form>
+            
+          </div>
+        </div>
+        <div class="two wide column"></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>
+<%- include("./partials/footer.ejs") %> 
