@@ -28,5 +28,5 @@ const userDashboard = (req, res) =>{
 module.exports = {
     home,
     userProfile,
-    userDashboard
+    userDashboard,
 }

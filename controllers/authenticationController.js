@@ -16,8 +16,8 @@ let registerUser = async (req, res) =>{
     let pass = req.body.pass;
 
     let checkExist = await authenticationModel.checUserExists(userName);
-    // console.log();
-    if(checkExist == 0){
+    console.log(checkExist);
+    if(checkExist[0].c == 0){
         await authenticationModel.registerUser(userName, email, pass);
         res.redirect("/");
     }

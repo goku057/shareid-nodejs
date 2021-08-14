@@ -9,4 +9,5 @@ router.get("/", basicController.home);
 router.get("/user-profile", basicController.userProfile)
 router.get("/user-dashboard", basicController.userDashboard)
 
+
 module.exports = router;

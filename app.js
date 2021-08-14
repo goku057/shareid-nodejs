@@ -13,12 +13,12 @@ app.use(express.json());
 //setting up the routes
 const basicRoutes = require("./routes/basicRoutes.js");
 const authenticationRoutes = require("./routes/authenticationRoutes.js");
+const accountInfoRoutes = require("./routes/profileRoutes/accountInfoRoutes.js");
 
 //using the routes
 app.use(basicRoutes);
 app.use(authenticationRoutes);
-
-
+app.use(accountInfoRoutes);
 
 
 
