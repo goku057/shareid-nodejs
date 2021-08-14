@@ -1,11 +1,23 @@
 //requiring models
 const accountInfoModel = require("../../models/profileModel/accountInfoModel.js");
+const { id } = require("../../helpers/activeUser");
 
-let accountInfo = (req, res) =>{
+
+let accountInfo = async (req, res) =>{
+    let activeUser = id; 
+    let showUserInfo = await accountInfoModel.showInfo(activeUser);
+    // console.log(showUserInfo.length);
+
+
+
+
+
     let pageTitle = "Account-Information";
     let data = {
-        pageTitle
+        pageTitle,
+        showUserInfo
     }
+
     res.render("account-info.ejs", {data});
 }
 
@@ -15,25 +27,37 @@ let info = async (req, res) =>{
     let LastName = req.body.lName;
     let dob = req.body.dob;
     let phone = req.body.phone;
-
+    let activeUser = id; 
     console.log(req.body);
 
-    await accountInfoModel.updateInfo(FirstName, LastName, dob, phone);
+    await accountInfoModel.createInfo(activeUser, FirstName, LastName, dob, phone);
     res.redirect("/account-info");
-    // console.log(checkExist);
-    // if(checkExist[0].c == 0){
-    //     await authenticationModel.updateInfo(FirstName, LastName, dob, phone);
-    //     res.redirect("/");
-    // }
-    // else{
-    //     console.log("The name already exists");
-        
-    // }
-   
+    
 }
+
+let showInfo = async (req, res) =>{
+    
+    let activeUser = id; 
+    console.log(req.body);
+    let showUserInfo = await accountInfoModel.showInfo(activeUser);
+    console.log(showUserInfo);
+
+
+
+
+
+    let pageTitle = "Account-Information";
+    let data = {
+        pageTitle
+    }
+
+    res.render("account-info.ejs", {data});
+}
+
 
 
 module.exports = {
     accountInfo,
-    info
+    info,
+    showInfo
 }

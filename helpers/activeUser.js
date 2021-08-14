@@ -1,2 +1,2 @@
-const id = 3;
-module.exports = id;
+const id = 4;
+module.exports = { id };

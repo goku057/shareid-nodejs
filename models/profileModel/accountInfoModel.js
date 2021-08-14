@@ -1,8 +1,17 @@
 let { query } = require("../../helpers/db.js");
 
-let updateInfo = async (fName, lName, dob, phone) => {
+let createInfo = async (activeUser, fName, lName, dob, phone) => {
     
-    let sqlCommand = `INSERT INTO user_info( user_id, first_name, last_name, dob, phone, currency) VALUES (2, '${fName}', '${lName}', '${dob}', '${phone}', '');`
+    let sqlCommand = `INSERT INTO user_info( user_id, first_name, last_name, dob, phone, currency) VALUES ('${activeUser}', '${fName}', '${lName}', '${dob}', '${phone}', '');`
+
+    let result = await query(sqlCommand);
+    return result;
+}
+
+
+let showInfo = async (activeUser) => {
+    
+    let sqlCommand = `SELECT user_id, first_name, last_name, dob, phone, currency FROM user_info WHERE user_id = '${activeUser}';`
 
     let result = await query(sqlCommand);
     return result;
@@ -17,6 +26,7 @@ let updateInfo = async (fName, lName, dob, phone) => {
 // } 
 
 module.exports = {
-    updateInfo
+    createInfo,
+    showInfo
     
 }

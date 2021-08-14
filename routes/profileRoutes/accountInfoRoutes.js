@@ -8,6 +8,6 @@ const accountInfoController = require("../../controllers/profileController/accou
 
 router.get("/account-info", accountInfoController.accountInfo);
 router.post("/account-info", accountInfoController.info);
-
+router.get("/account-show-info", accountInfoController.showInfo)
 
 module.exports = router;
