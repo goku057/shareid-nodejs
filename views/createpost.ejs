@@ -55,19 +55,11 @@
                 </div>
               </div>
               <div class="inline fields">
-                <label for="category">Category</label>:</label>
-                <div class="field">
-                  <div class="ui radio checkbox">
-                    <input type="radio" name="category" checked="" tabindex="0" class="hidden">
-                    <label>Sell</label>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="ui radio checkbox">
-                    <input type="radio" name="category" tabindex="0" class="hidden">
-                    <label>Share</label>
-                  </div>
-                </div>
+                <label for="category">Category</label>
+                <select value=""  name="category" class="ui selection dropdown">
+                  <option name="gaming" id="" value="1" selected>Gaming</option>
+                  <option name="streaming" id="" value="2" >Streaming</option>
+                </select>
               </div>
               <div class="inline fields">
                 <div class="sixteen wide field">
@@ -90,6 +82,12 @@
               <div class="field">
                 <label>Description</label>
                 <textarea placeholder="Add description" name="description"></textarea>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Tags</label>
+                  <input type="text" placeholder="Enter tags" name="tags">
+                </div>
               </div>
               <Button class="ui fluid primary button">Post</Button>
             </form>
