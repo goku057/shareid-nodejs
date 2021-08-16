@@ -74,13 +74,48 @@
         <span class="custom_header_name_dashboard">Name</span>
       </div>
     </div>
-    
+
     <div class="ui equal width center alligned padded grid">
       <div class="row">
         <div class="four wide column">
 
         </div>
         <div class="eight wide column">
+          <table class="ui selectable inverted table" style="opacity:  0.95;">
+            <thead>
+              <tr>
+                <th colspan="3" style="text-align: center;">
+                  Edit your Personal Information
+                </th>
+              </tr>
+            </thead>
+          </table>
+
+          <form class="ui form" action="/account-info-update" method="POST">
+            <div class="fields">
+              <div class="field">
+                <label style="color: rgb(255, 255, 255);">First name</label>
+                <input type="text" placeholder="First Name" name="fName">
+              </div>
+              <div class="field">
+                <label style="color: rgb(255, 255, 255);">Last Name</label>
+                <input type="text" placeholder="Middle Name" name="lName">
+              </div>
+              <div class="field">
+                <label style="color: rgb(255, 255, 255);">Date of Birth</label>
+                <input type="text" placeholder="Date of Birth" name="dob">
+              </div>
+              <div class="field">
+                <label style="color: rgb(255, 255, 255);">Phone</label>
+                <input type="text" placeholder="Phone" name="phone">
+              </div>
+            </div>
+            <div class="field">
+              <button class="ui secondary button">
+                Update
+              </button>
+            </div>
+          </form>
 
 
 
@@ -88,7 +123,7 @@
             <thead>
               <tr>
                 <th colspan="3" style="text-align: center;">
-                  Personal Information
+                  Personal Information (view)
                 </th>
               </tr>
             </thead>
@@ -98,35 +133,35 @@
                   First Name
                 </td>
                 <td>Zahid</td>
-                <td class="right aligned collapsing"><a>Edit</a></td>
+                <!-- <td class="right aligned collapsing"><a>Edit</a></td> -->
               </tr>
               <tr>
                 <td>
                   Last Name
                 </td>
                 <td>Malek</td>
-                <td class="right aligned"><a>Edit</a></td>
+                <!-- <td class="right aligned"><a>Edit</a></td> -->
               </tr>
               <tr>
                 <td>
-                  Date o Birth
+                  Date of Birth
                 </td>
                 <td>07.05.1990</td>
-                <td class="right aligned"><a>Edit</a></td>
+                <!-- <td class="right aligned"><a>Edit</a></td> -->
               </tr>
               <tr>
                 <td>
                   Phone
                 </td>
                 <td>01700000001</td>
-                <td class="right aligned"><a>Edit</a></td>
+                <!-- <td class="right aligned"><a>Edit</a></td> -->
               </tr>
               <tr>
                 <td>
-                  Email
+                  Currency
                 </td>
-                <td>zahid@gmail.com</td>
-                <td class="right aligned"><a>Edit</a></td>
+                <td>100000</td>
+                <!-- <td class="right aligned"><a>Edit</a></td> -->
               </tr>
             </tbody>
           </table>

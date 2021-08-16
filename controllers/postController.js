@@ -3,8 +3,9 @@ const postModel = require("../models/postModel.js");
 
 let createpost = (req , res)=>
 {
+
     let pageTitle = "CreatePost";
-    let data = 
+    let data =
     {
         pageTitle
     }
@@ -57,7 +58,7 @@ let showLatestPost = async (req , res)=>
     res.render("latest-posts.ejs" , { data });
 } 
 
-module.exports = 
+module.exports =
 {
     createpost,
     createpostUser,
