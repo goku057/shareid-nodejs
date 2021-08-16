@@ -3,9 +3,10 @@ const express = require("express");
 const router = express.Router();
 
 //getting the createpost
-const createpost = require("../controllers/postController.js");
+const postController = require("../controllers/postController.js");
 
-router.get("/createpost", createpost.createpost);
-router.post("/createpost",createpost.createpostUser)
+router.get("/createpost", postController.createpost);
+router.post("/createpost",postController.createpostUser)
 
+router.get("/latest-posts", postController.showLatestPost)
 module.exports = router;
