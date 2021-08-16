@@ -2,7 +2,7 @@
 const client = require('./esConnection.js');
 
 client.indices.create({  
-  index: 'articles'
+  index: 'post'
 },function(err,resp,status) {
   if(err) {
     console.log(err);
