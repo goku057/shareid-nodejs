@@ -1,0 +1,95 @@
+<%- include("./partials/header.ejs") %> 
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container">
+    <%- include("./partials/navbar.ejs") %> 
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+    </div>
+    <div class="ui equal width center aligned padded grid">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="column ">
+          <div class="ui huge header"><span class="custom-header">Share ID</span> <br> One stop to buy you desired
+            accounts</div>
+        </div>
+        <div class="column">
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="column">Custom Row</div> -->
+      </div>
+    </div>
+    <div class="ui container">
+      <div class="ui grid">
+        <div class="row">
+          <div class="four wide column"></div>
+          <div class="eight wide column">
+            <div id="create-post-header">
+              <span>Latest posts</span>
+            </div>
+          </div>
+          <div class="ui four wide column"></div>
+        </div>
+        <div class="row" id="custom_create-post-row">
+          <div class="two wide column"></div>
+          <div class="twelve wide column">
+           <% if (data.posts.length == 0){ %>
+
+            <h1> Nothing to Show </h1>
+
+           <% } else { data.posts.forEach(post => {  %>
+
+            <div class="ui centered cards">
+              <div class="card"id="post-card">
+                <div class="content">
+                  <img class="right floated tiny circular ui image" src="https://via.placeholder.com/150">
+                  <div class="ui huge header">
+                    <%= post.title %>
+                  </div>
+                  <div class="meta">
+                    Date: <%= post.post_time %>
+                  </div>
+                  <div class="meta">
+                    Category: <%= post.cat_name %>
+                  </div>
+                  <div class="meta">
+                    Price: <%= post.price %> Taka
+                  </div>
+                  <div class="meta">
+                    Posted by: <%= post.user_name %> 
+                  </div>
+                  <div class="description">
+                    <%= post.description %>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="ui two buttons">
+                    <div class="ui basic green button">Edit</div>
+                    <div class="ui basic red button">Delete</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% });} %>
+            
+            <div class="ui centered cards">
+              
+            </div>
+          </div>
+        </div>
+        <div class="two wide column"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
+<%- include("./partials/footer.ejs") %> 
