@@ -1,5 +1,6 @@
 //setting up express 
 const express = require("express");
+const socket=require("socket.io");
 const app = express();
 
 //setting up view engine
@@ -10,6 +11,7 @@ app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 //setting up the routes
 const basicRoutes = require("./routes/basicRoutes.js");
 const authenticationRoutes = require("./routes/authenticationRoutes.js");
@@ -17,6 +19,8 @@ const authenticationRoutes = require("./routes/authenticationRoutes.js");
 const accountInfoRoutes = require("./routes/profileRoutes/accountInfoRoutes.js");
 
 const postRoutes = require("./routes/postRoutes.js");
+
+const messageRoutes=require("./routes/messageRoutes.js");
 
 
 //using the routes
@@ -26,6 +30,8 @@ app.use(authenticationRoutes);
 app.use(accountInfoRoutes);
 
 app.use(postRoutes);
+
+app.use(messageRoutes);
 
 
 
