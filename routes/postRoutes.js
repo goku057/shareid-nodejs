@@ -8,4 +8,5 @@ const postController = require("../controllers/postController.js");
 router.get("/createpost", postController.createpost);
 router.post("/createpost",postController.createpostUser)
 
+router.get("/latest-posts", postController.showLatestPost)
 module.exports = router;
