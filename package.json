@@ -4,6 +4,7 @@
   "description": "amdr kenabechar jayga",
   "main": "app.js",
   "dependencies": {
+    "dateformat": "^4.5.1",
     "ejs": "^3.1.6",
     "elasticsearch": "^16.7.2",
     "express": "^4.17.1",

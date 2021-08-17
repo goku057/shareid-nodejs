@@ -1,6 +1,5 @@
 //setting up express 
 const express = require("express");
-const socket=require("socket.io");
 const app = express();
 
 //setting up view engine
