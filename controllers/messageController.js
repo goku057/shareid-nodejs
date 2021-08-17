@@ -41,7 +41,7 @@ let msgInbox = async (req, res) =>{
     let msgCreated = await messageModel.checkIfMsgCreated(activeUser, msgWithID);
     if(msgCreated[0].c == 0){
         let msgCreateForActiveUser = await messageModel.getCreatedMsgCount(activeUser);
-        let msgCreateForUser = await messageModel.getCreatedMsgCount(activeUser);
+        let msgCreateForUser = await messageModel.getCreatedMsgCount(msgWithID);
         msgCreateForActiveUser = msgCreateForActiveUser[0].c + 1;
         msgCreateForUser = msgCreateForUser[0].c +1;
         await messageModel.createMsg(activeUser,msgCreateForActiveUser,msgWithID,msgCreateForUser);
