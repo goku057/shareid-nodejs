@@ -32,30 +32,30 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <button class="ui primary button">
-                    Create New Message
-                  </button>
-                </td>
-              </tr>
-              <% if (data.msgList.length == 0) { %>
+              
+              <% if (data.userList.length == 0) { %>
                 <tr>
                   <td>
-                    No Messages Found
+                    No User Found
 
                   </td>
                 </tr>
               <% }else{ %>
-                <% data.msgList.forEach(msg => { %>
-              <tr>
-                <td class="collapsing">
+              <% data.userList.forEach(user => { %>
+                <tr>
+                
+                    <td class="collapsing">
+                        
+                            
 
-                  <i class="comments icon"></i> <%= msg.user_name %>
-                </td>
-                <td><%= msg.msg %></td>
-                <td class="right aligned collapsing"><%= data.df(msg.msg_time, "fullDate"); %></td>
-              </tr>
+                        <i class="comments icon"></i><a href="/message-inbox?uid=<%
+                        = user.user_id %> "> <%= msg.user_name %>
+                     
+                      </td>
+                
+               
+              </tr> 
+              
               <%}); } %>
               
             </tbody>
