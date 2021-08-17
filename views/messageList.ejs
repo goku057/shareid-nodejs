@@ -34,9 +34,11 @@
             <tbody>
               <tr>
                 <td>
-                  <button class="ui primary button">
-                    Create New Message
-                  </button>
+                  <a href="/viewmsguser">
+                    <button class="ui primary button">
+                      Create New Message
+                    </button>
+                  </a>
                 </td>
               </tr>
               <% if (data.msgList.length == 0) { %>
@@ -51,10 +53,9 @@
               <tr>
                 <td class="collapsing">
 
-                  <i class="comments icon"></i> <%= msg.user_name %>
+                  <a href="/message-inbox?uid=<%= msg.created_with_id %> "><i class="comments icon"></i> <%= msg.user_name %></a>
                 </td>
-                <td><%= msg.msg %></td>
-                <td class="right aligned collapsing"><%= data.df(msg.msg_time, "fullDate"); %></td>
+               
               </tr>
               <%}); } %>
               
