@@ -6,8 +6,12 @@
       ShareID
     </label>
     
-    <form action="/search" method="get" class="ui icon input  right menu  custom-searchbar"id="searchForm">
-      <input type="text" placeholder="Search...">
+    <form action="/search" method="post" class="ui icon input  right menu  custom-searchbar"id="searchForm">
+      <!-- <select id="cat" name="cat">
+        <option value="user">user</option>
+        <option value="post">post</option>
+      </select> -->
+      <input type="text" name="q" placeholder="Search...">
       <i class="inverted circular search link icon submitButton"></i>
     </form>
     
