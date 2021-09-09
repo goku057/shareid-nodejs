@@ -20,6 +20,18 @@ let showPayForm = async (req, res)=>{
 
 }
 
+let getFormInfo = async (req, res)=>{
+
+    let userID = id;
+    let currentAmount = await paymentModel.getCurrency(userID);
+    let data = {
+        currentAmount
+    }
+    res.json({data});
+
+
+}
+
 
 let pay = async (req, res)=>{
 
@@ -83,6 +95,7 @@ let payment = async (req, res) => {
         let totalAmount = currentAmount + paidAmount;
         // console.log(totalAmount);
         await  paymentModel.updateCurrency(userID, totalAmount);
+        await  paymentModel.paymentDetails(userID, paidAmount);
         res.redirect("/pay-form")
     }) 
     .catch((err) => { 
@@ -92,6 +105,7 @@ let payment = async (req, res) => {
 
 module.exports = {
     showPayForm,
+    getFormInfo,
     pay,
     payment,
 }

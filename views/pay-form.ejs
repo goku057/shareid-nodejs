@@ -78,7 +78,19 @@
                     </div>
                 </div>
 
-
+                <script>
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var myObj = JSON.parse(this.responseText);
+                            document.getElementById("content").innerHTML = JSON.stringify(myObj);
+                            console.log(myObj)
+                        }
+                    };
+                    xmlhttp.open("GET", "localhost:3000/payform-info"
+                        , true);
+                    xmlhttp.send();
+                </script>
     </body>
 
     </html>
