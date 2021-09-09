@@ -48,8 +48,8 @@
                                         <td class="collapsing">
                                           Your current balance:
                                         </td>
-                                        <td>
-                                            $<%= data.currentAmount %>
+                                        <td id="amount">
+                                            loading...
                                         </td>
                                         <!-- <td class="right aligned collapsing"><a>Edit</a></td> -->
                                     </tr>
@@ -79,17 +79,24 @@
                 </div>
 
                 <script>
-                    var xmlhttp = new XMLHttpRequest();
+                    let xmlhttp = new XMLHttpRequest();
                     xmlhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
-                            var myObj = JSON.parse(this.responseText);
-                            document.getElementById("content").innerHTML = JSON.stringify(myObj);
-                            console.log(myObj)
+                            let myObj = JSON.parse(this.responseText);
+                            document.getElementById("amount").innerHTML ="$" + myObj.data.currentAmount;
+                            // console.log("ggg");
+                            // console.log(myObj)
                         }
                     };
-                    xmlhttp.open("GET", "localhost:3000/payform-info"
+                    xmlhttp.open("GET", "http://localhost:3000/payform-info"
                         , true);
                     xmlhttp.send();
+                    // fetch('http://localhost:3000/payform-info')
+                    //     .then(response => response.json())
+                    //     .then(json => {
+                    //     // document.getElementById("content").innerHTML = JSON.stringify(json);
+                    //     console.log(json)
+                    // })
                 </script>
     </body>
 
