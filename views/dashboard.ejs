@@ -17,7 +17,7 @@
     
         </div>
         <div class="dashboard_image_div">
-          <img src="/public/images/khoma.png" alt="" class="ui circular image" style="max-height:250px;">
+          <img src="../public/images/khoma.png" alt="" class="ui circular image" style="max-height:250px;">
         </div>
         <div class="dashboard_name_div">
           <br><br><br>
@@ -44,7 +44,7 @@
                 <div class="header">Currency</div>
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
-                  <a>Animals</a>
+                  <b><a><%= data.dashboardCurrency[0].currency %></a></b>
                 </div>
                 <p></p>
               </div>
@@ -58,7 +58,7 @@
                 <div class="header">Earned | Sold</div>
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
-                  <a>Animals</a>
+                  <b><a><%= data.dashboardEarned[0].earn %></a></b>
                 </div>
                 <p></p>
               </div>
@@ -71,7 +71,7 @@
                 <div class="header">Conferred | Paid</div>
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
-                  <a>Animals</a>
+                  <b><a><%= data.dashboardPaid[0].pay %></a></b>
                 </div>
                 <p></p>
               </div>
@@ -85,7 +85,7 @@
                 <div class="header">Total posts</div>
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
-                  <a>Animals</a>
+                  <b><a><%= data.dashboardTotalPost[0].totalPost %></a></b>
                 </div>
                 <p></p>
               </div>
