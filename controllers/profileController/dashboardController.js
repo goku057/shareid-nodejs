@@ -1,56 +1,42 @@
 //requiring models
-const accountInfoModel = require("../../models/profileModel/dashboardModel.js");
+const dashboardModel = require("../../models/profileModel/dashboardModel.js");
 const { id } = require("../../helpers/activeUser");
 
 
 let dashboardData = async (req, res) =>{
     let activeUser = id; 
-    let dashboardCurrency = await accountInfoModel.showCurrency(activeUser);
-    let dashboardEarned = await accountInfoModel.showEarned(activeUser);
-    let dashboardPaid = await accountInfoModel.showPaid(activeUser);
-    let dashboardTotalPost = await accountInfoModel.showTotalpost(activeUser);
+    let dashboardEarned = await dashboardModel.showEarned(activeUser);
+    let dashboardPaid = await dashboardModel.showPaid(activeUser);
+    let dashboardTotalPost = await dashboardModel.showTotalpost(activeUser);
     // console.log(dashboardData.length);
     let pageTitle = "Dashboard";
     let data = {
         pageTitle,
-        dashboardCurrency,
         dashboardEarned,
         dashboardPaid,
         dashboardTotalPost
 
     }
-    console.log(dashboardCurrency);
+    console.log("data 1" + data);
     res.render("dashboard.ejs", {data});
 }
 
-// let info = async (req, res) =>{    
-//     let FirstName = req.body.fName;
-//     let LastName = req.body.lName;
-//     let dob = req.body.dob;
-//     let phone = req.body.phone;
-//     let activeUser = id; 
-//     console.log(req.body);
-//     await accountInfoModel.createInfo(activeUser, FirstName, LastName, dob, phone);
-//     res.redirect("/account-info");
-// }
+let dashboardAjaxData = async (req, res) =>{
+    // console.log("data 2" + data);
 
-// let showInfo = async (req, res) =>{
-
-//     let activeUser = id; 
-//     console.log(req.body);
-//     let dashboardData = await accountInfoModel.showInfo(activeUser);
-//     console.log(dashboardData);
-//     let pageTitle = "Account-Information";
-//     let data = {
-//         pageTitle
-//     }
-
-//     res.render("account-info.ejs", {data});
-// }
-
+    let activeUser = id; 
+    let dashboardCurrency = await dashboardModel.showCurrency(activeUser);
+    let data = {
+        dashboardCurrency
+    }
+    // console.log("data 2" + data);
+    console.log(data);
+    res.json({data});
+}
 
 
 module.exports = {
-    dashboardData
+    dashboardData,
+    dashboardAjaxData
    
 }

@@ -44,7 +44,7 @@
                 <div class="header">Currency</div>
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
-                  <b><a><%= data.dashboardCurrency[0].currency %></a></b>
+                  <b><a id="curr">getting...</a></b>
                 </div>
                 <p></p>
               </div>
@@ -59,6 +59,7 @@
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
                   <b><a><%= data.dashboardEarned[0].earn %></a></b>
+                  
                 </div>
                 <p></p>
               </div>
@@ -96,8 +97,21 @@
           <div class="four wide column"></div>
           <div class="four wide column"></div> -->
         </div>
-    
-        
+
+
+        <script>
+          let xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (this.readyState == 4 && this.status == 200) {
+                  let myObj = JSON.parse(this.responseText);
+                  document.getElementById("curr").innerHTML = myObj.data.dashboardCurrency[0].currency;
+                  console.log(myObj);
+              }
+          };
+          xmlhttp.open("GET", "http://localhost:3000/dashboard-data"
+              , true);
+          xmlhttp.send();
+        </script>
     <!--     
     
         <table class="ui selectable inverted table">
