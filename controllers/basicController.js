@@ -43,7 +43,9 @@ let purchase = async(req, res)=>{
     let activeUser = id;
     let pid = req.query.pid;
     let uid = req.query.uid;
-    console.log(pid)
+    let curr = req.query.cur;
+
+    console.log(curr)
     let msgCreated = await messageModel.checkIfMsgCreated(activeUser, adminID);
     if(msgCreated[0].c == 0){
         let msgCreateForActiveUser = await messageModel.getCreatedMsgCount(activeUser);
@@ -52,7 +54,7 @@ let purchase = async(req, res)=>{
         msgCreateForUser = msgCreateForUser[0].c +1;
         await messageModel.createMsg(activeUser,msgCreateForActiveUser,adminID,msgCreateForUser);
     }
-    await postModel.buyPost(activeUser, pid, uid);
+    await postModel.buyPost(activeUser, pid, uid, curr);
     let msgWithID = activeUser;
     let postInfo = await postModel.getPostInfo( uid, pid)
     console.log("gg")
