@@ -1,11 +1,14 @@
 let { query } = require("../../helpers/db.js");
 
 let createInfo = async (activeUser, fName, lName, dob, phone) => {
+    console.log(activeUser, fName, lName, dob, phone);
     
-    let sqlCommand = `INSERT INTO user_info( user_id, first_name, last_name, dob, phone, currency) VALUES ('${activeUser}', '${fName}', '${lName}', '${dob}', '${phone}', '');`
+    let sqlCommand = `INSERT INTO user_info( user_id, first_name, last_name, dob, phone, currency) VALUES (${activeUser}, '${fName}', '${lName}', '${dob}', '${phone}', '');`
 
     let result = await query(sqlCommand);
+    console.log(result);
     return result;
+
 }
 
 

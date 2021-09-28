@@ -6,18 +6,16 @@ const { id } = require("../../helpers/activeUser");
 let accountInfo = async (req, res) =>{
     let activeUser = id; 
     let showUserInfo = await accountInfoModel.showInfo(activeUser);
-    // console.log(showUserInfo.length);
-
-
-
-
-
+    
     let pageTitle = "Account-Information";
     let data = {
         pageTitle,
         showUserInfo
     }
+    console.log(data.showUserInfo);
+    var resultArray = Object.values(JSON.parse(JSON.stringify(data.showUserInfo)))
 
+    console.log(resultArray);
     res.render("account-info.ejs", {data});
 }
 
@@ -41,11 +39,6 @@ let showInfo = async (req, res) =>{
     console.log(req.body);
     let showUserInfo = await accountInfoModel.showInfo(activeUser);
     console.log(showUserInfo);
-
-
-
-
-
     let pageTitle = "Account-Information";
     let data = {
         pageTitle

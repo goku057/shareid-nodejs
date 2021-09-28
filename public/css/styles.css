@@ -170,7 +170,7 @@ body{
 
 
   /* DASHBOARD CSS */
-  .dashboard_image_div,.dashboard_name_div{
+  .dashboard_image_div,.dashboard_name_div,.dashboard_createpost{
     display: flex;
     justify-content: center;
   }
