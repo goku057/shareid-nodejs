@@ -58,8 +58,12 @@
                 <div class="header">Earned | Sold</div>
                 <div class="meta">
                   <!-- <span>2 days ago</span> -->
-                  <b><a><%= data.dashboardEarned[0].earn %></a></b>
-                  
+                  <b><a>
+                    <% if (data.dashboardEarned.length==0) { %>
+                      <%=  console.log("0") %>
+                      <% } else {%>
+                        <%= data.dashboardEarned[0].earn %></a></b>
+                      <%} %>
                 </div>
                 <p></p>
               </div>
@@ -104,7 +108,12 @@
           xmlhttp.onreadystatechange = function () {
               if (this.readyState == 4 && this.status == 200) {
                   let myObj = JSON.parse(this.responseText);
-                  document.getElementById("curr").innerHTML = myObj.data.dashboardCurrency[0].currency;
+                  if(myObj.data.dashboardCurrency.length==0) {
+                    document.getElementById("curr").innerHTML = 0;
+                  } else {
+                    document.getElementById("curr").innerHTML ="$" + myObj.data.dashboardCurrency[0].currency;
+                  }
+                  
                   console.log(myObj);
               }
           };
