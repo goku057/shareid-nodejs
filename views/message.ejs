@@ -1,0 +1,76 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container" >
+    <%- include("./partials/navbar.ejs") %> 
+      
+    <div class="ui left demo vertical inverted sidebar labeled icon menu" >
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+      
+    </div>
+  <div class="ui equal width center alligned padded grid">
+    <div class="row">
+      <div class="four wide column">
+  
+      </div>
+      <div class="eight wide column">
+        <% if(data.msg.length == 0){ %>
+          <div class="cmessage-container">
+            
+            <p>No messages are there</p>
+            <span class="cmessage-time-right">11:00</span>
+          </div>
+          
+          <% }else{ data.msg.forEach( m => { %> 
+        <% if(data.activeUserInfo[0].user_id != m.sender_id ){ %>  
+        <div class="cmessage-container">
+          <!-- <img src="/public/images/khoma.png" alt="Avatar" style="width:100%;"> -->
+          <h4 href=""><%= data.msgWithInfo[0].user_name %></h4>
+          <p><%= m.msg %> </p>
+          <span class="cmessage-time-right" style="color: #0d274f;"><%= data.df(m.msg_time, "mmmm dS, yyyy, h:MM:ss TT") %> </span>
+        </div>
+        <% }else{ %> 
+        <div class="cmessage-container darker">
+          <!-- <img  alt="Avatar" class="right" style="width:100%;"> -->
+          <h4 href="" class="right"><%= data.activeUserInfo[0].user_name %></h4>
+          <p><%= m.msg %></p>
+          <span class="cmessage-time-left" style="color: #0d274f;"><%= data.df(m.msg_time, "mmmm dS, yyyy, h:MM:ss TT") %></span>
+        </div>
+        <%} })} %>
+        <!-- <div class="ui fluid action input"> -->
+          <form class="ui fluid action input" action="/message-inbox" method="post">
+            <input type="hidden" name="uid" value="<%= data.msgWithInfo[0].user_id %> ">
+          <input type="text" name="msg" placeholder="type to send">
+          <button class="ui button">send</button>
+          <!-- <input type="submit" value="sened"> -->
+        </form>
+        <!-- </div> -->
+  
+  
+      </div>
+      <div class= "four wide column">
+  
+      </div>
+    </div> 
+  </div>
+
+  </div>
+
+
+
+
+
+
+  
+</body>
+</html>
+<%- include("./partials/footer.ejs") %> 
+
+

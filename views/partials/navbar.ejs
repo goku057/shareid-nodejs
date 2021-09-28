@@ -3,16 +3,21 @@
      <i class="icon bars"></i>
     </a>
     <label class="item">
-      ShareID
+      <a href="/">ShareID</a> 
     </label>
     
-    <div class="ui icon input  right menu  custom-searchbar">
-      <input type="text" placeholder="Search...">
-      <i class="inverted circular search link icon"></i>
-    </div>
+    <form action="/search" method="post" class="ui icon input  right menu  custom-searchbar"id="searchForm">
+      <!-- <select id="cat" name="cat">
+        <option value="user">user</option>
+        <option value="post">post</option>
+      </select> -->
+      <input type="text" name="q" placeholder="Search...">
+      <i class="inverted circular search link icon submitButton"></i>
+    </form>
     
     <div class="right menu">
-      <a href="" class="item">Message</a>
+      <a href="/latest-posts" class="item">Posts</a>
+      <a href="/message" class="item">Message</a>
       <div class="ui dropdown simple item ">
         <i class="globe icon"></i>
         <div class="menu">
@@ -25,7 +30,7 @@
         <img src="./images/khoma.png" alt="" class="ui very  mini circular image" style="max-height:30px"> <i class="dropdown icon"></i>
         <div class="menu">
           <a class="item">Dashboard</a>
-          <a class="item">Account Information</a>
+          <a class="item" href="/account-info">Account Information</a>
           <a class="item" href="/pay-form">Payment</a>
           <a class="item">Logout</a>
         </div>

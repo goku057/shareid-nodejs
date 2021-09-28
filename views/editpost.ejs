@@ -1,0 +1,101 @@
+<%- include("./partials/header.ejs") %> 
+
+<body>
+  <div class="ui container fluid custom-home-bg" id="home-container">
+    <%- include("./partials/navbar.ejs") %> 
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="icon gamepad"></i>
+        Gaming
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Streaming
+      </a>
+
+    </div>
+    <div class="ui equal width center aligned padded grid">
+      <div class="row">
+
+      </div>
+      <div class="row">
+        <!-- <div class="column ">
+          <div class="ui huge header"><span class="custom-header">Share ID</span> <br> One stop to buy you desired
+            accounts</div>
+        </div> -->
+        <div class="column">
+
+        </div>
+      </div>
+      <div class="row">
+        <!-- <div class="column">Custom Row</div> -->
+      </div>
+
+    </div>
+    <div class="ui container">
+      <div class="ui grid">
+        <div class="row">
+          <div class="four wide column"></div>
+          <div class="eight wide column">
+            <div id="create-post-header">
+              <span>Update post</span>
+            </div>
+          </div>
+          <div class="ui four wide column"></div>
+        </div>
+        <div class="row" id="custom_create-post-row">
+          <div class="two wide column"></div>
+          <div class="twelve wide column">
+            <div class="ui huge header"><span>Update your post</span></div>
+            <form class="ui form" action="/editpost/<%= data.post[0].pid %>" method="post">
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Title</label>
+                  <input type="text" placeholder="Enter your post title" name="title" value="<%= data.post[0].title %>">
+                </div>
+              </div>
+              <div class="inline fields">
+                <label for="category">Category</label>
+
+                <select value="<%= data.post[0].cat %>" name="category" class="ui selection dropdown">
+                  <option name="" id="" value="1" selected >Gaming</option>
+                  <option name="" id="" value="2">Streaming</option>
+
+                </select>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Price</label>
+                  <input type="text" placeholder="Enter your price" name="price" value="<%= data.post[0].price %>">
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Username</label>
+                  <input type="text" placeholder="Enter your username" name="username" value="<%= data.post[0].puser_name %>">
+                </div>
+              </div>
+              <div class="field">
+                <label>Description</label>
+                <textarea placeholder="Add description" name="description"><%= data.post[0].description%></textarea>
+              </div>
+              <div class="inline fields">
+                <div class="sixteen wide field">
+                  <label>Tags</label>
+                  <input type="text" placeholder="Enter tags" name="tags" value="<%= data.post[0].tag %>">
+                </div>
+              </div>
+              <Button class="ui fluid primary button">Update Post</Button>
+            </form>
+            
+          </div>
+        </div>
+        <div class="two wide column"></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+<%- include("./partials/footer.ejs") %> 

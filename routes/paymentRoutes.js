@@ -6,6 +6,7 @@ const router = express.Router();
 const paymentController = require("../controllers/paymentController.js");
 
 router.get("/pay-form", paymentController.showPayForm);
+router.get("/payform-info", paymentController.getFormInfo)
 router.post("/pay", paymentController.pay);
 router.post("/payment", paymentController.payment);
 

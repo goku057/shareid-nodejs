@@ -33,48 +33,47 @@
           <div class="four wide column"></div>
           <div class="eight wide column">
             <div id="create-post-header">
-              <span>Your posts<br> <br><br><a href="/createpost"><button class="ui button primary">Click here to create new post</button></a></span> 
+              <span>Search results</span>
             </div>
-            
           </div>
           <div class="ui four wide column"></div>
         </div>
         <div class="row" id="custom_create-post-row">
           <div class="two wide column"></div>
           <div class="twelve wide column">
-           <% if (data.posts.length == 0){ %>
+           <% if (data.searchresult.length == 0){ %>
 
             <h1> Nothing to Show </h1>
 
-           <% } else { data.posts.forEach(post => {  %>
+           <% } else { data.searchresult.forEach(s => {  %>
 
             <div class="ui centered cards">
               <div class="card"id="post-card">
                 <div class="content">
                   <img class="right floated tiny circular ui image" src="https://via.placeholder.com/150">
                   <div class="ui huge header">
-                    <%= post.title %>
+                    <%= s.title %>
                   </div>
                   <div class="meta">
-                    Date: <%= post.post_time %>
+                    Date: <%= s.post_time %>
                   </div>
                   <div class="meta">
-                    Category: <%= post.cat_name %>
+                    Category: <%= s.cat_name %>
                   </div>
                   <div class="meta">
-                    Price: <%= post.price %> Taka
+                    Price: <%= s.price %> Taka
                   </div>
                   <div class="meta">
-                    Posted by: <%= post.user_name %> 
+                    Posted by: <%= s.user_name %> 
                   </div>
                   <div class="description">
-                    <%= post.description %>
+                    <%= s.description %>
                   </div>
                 </div>
                 <div class="extra content">
                   <div class="ui two buttons">
-                    <a href="/editpost/<%= post.pid %>"><button class="ui button primary">Edit</button></a>
-                    <a href="/deletepost/<%= post.pid %>"><button class="ui button secondary">Delete</button></a>
+                    <div class="ui basic green button">Edit</div>
+                    <div class="ui basic red button">Delete</div>
                   </div>
                 </div>
               </div>

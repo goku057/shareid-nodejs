@@ -20,10 +20,21 @@ let updateCurrency = async (userID, amount) =>{
     return result;
 }
 
+let paymentDetails = async (userID, amount) =>{
+    let sqlCommand = `SELECT COUNT(*) AS c FROM payment_details WHERE user_id = ${userID};`;
+    let result = await query(sqlCommand);
+    let count = result[0].c + 1;
+    sqlCommand = `INSERT INTO payment_details(id, user_id, pay_amount, pay_time) VALUES (${count}, ${userID}, ${amount}, CURRENT_TIMESTAMP)`;
+    result = await query(sqlCommand);
+    return result;
+}
+
+
 
 
 module.exports = {
     getUserInfo,
     getCurrency,
-    updateCurrency
+    updateCurrency,
+    paymentDetails
 }

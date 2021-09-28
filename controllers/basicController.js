@@ -1,8 +1,12 @@
-const home = (req, res)=>{
-
+let { id } = require("../helpers/activeUser");
+const postModel = require("../models/postModel.js");
+const home = async(req, res)=>{
+    let activeUser = id;
+    let posts = await postModel.getUserAllPosts(activeUser);
     let title = "ShareID";
     let data = {
-        pageTitle : title
+        pageTitle : title,
+        posts
     }
     res.render("index", {data});
 

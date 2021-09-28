@@ -15,7 +15,6 @@ let createpost = (req , res)=>
 
 let createpostUser = async (req , res)=>
 {
-    console.log(req.body);
     let activeUser = id;
     let title = req.body.title;
     let category = req.body.category;
@@ -43,12 +42,39 @@ let createpostUser = async (req , res)=>
     res.render("createpost.ejs" , {data});
 }
 
+let editpost = async(req , res)=>
+{
+    let pageTitle = "EditPost";
+    let post = await postModel.getPost(req.params.id);
+    let data =
+    {
+        pageTitle,
+        post
+    }
+    res.render("editpost.ejs" , { data });
+}
+
+
+let editpostUser = async (req , res)=>
+{
+    console.log(req.params.id);
+    console.log(req.body);
+    let pid = req.params.id
+    let title = req.body.title;
+    let category = req.body.category;
+    let price = req.body.price;
+    let username = req.body.username;
+    let description = req.body.description;
+    let tags = req.body.tags;
+    postModel.editpostUser(pid,title, category, price, username,description, tags)
+    res.redirect('/latest-posts')
+}
+
 
 let showLatestPost = async (req , res)=>
 {
     let activeUser = id;
     let posts = await postModel.getAllPosts(activeUser);
-    console.log(posts);
     let pageTitle = "Posts";
     let data = 
     {
@@ -58,9 +84,23 @@ let showLatestPost = async (req , res)=>
     res.render("latest-posts.ejs" , { data });
 } 
 
+let deletepost = async (req , res)=>
+{
+    console.log('DeleteId',req.params.id);
+    let pid = req.params.id
+    postModel.deletepost(pid)
+    res.redirect('/')
+
+} 
+
+
+
 module.exports =
 {
     createpost,
     createpostUser,
-    showLatestPost 
+    showLatestPost,
+    editpost, 
+    editpostUser,
+    deletepost
 }
