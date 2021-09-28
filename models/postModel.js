@@ -63,6 +63,20 @@ let deletepost = async (postID) =>
     return result;
 }
 
+let buyPost = async (activeUser, uid, pid) => {
+    let sqlCommand = `UPDATE post_details SET post_Status = 'sold' WHERE user_id = ${uid} AND pid = ${pid}`
+    let result = await query(sqlCommand);
+    sqlCommand = `UPDATE post_details SET post_Status = 'sold' WHERE user_id = ${uid} AND pid = ${pid}`
+    result = await query(sqlCommand);
+    return result;
+}
+
+let getPostInfo = async (uid, pid) => {
+    let sqlCommand = `SELECT  puser_name, puser_pass FROM post_details WHERE pid = ${pid} AND user_id = ${uid}`;
+    let result = await query(sqlCommand);
+    return result;
+}
+
 module.exports = 
 {
    createpostUser,
@@ -71,6 +85,8 @@ module.exports =
    getPost,
    editpostUser,
    deletepost,
-   getUserAllPosts
+   getUserAllPosts,
+   buyPost,
+   getPostInfo
 
 }
