@@ -96,6 +96,7 @@ let payment = async (req, res) => {
         // console.log(totalAmount);
         await  paymentModel.updateCurrency(userID, totalAmount);
         await  paymentModel.paymentDetails(userID, paidAmount);
+        await  paymentModel.insertIntoNotification(userID,paidAmount);
         res.redirect("/pay-form")
     }) 
     .catch((err) => { 

@@ -20,6 +20,7 @@ const postRoutes = require("./routes/postRoutes.js");
 const messageRoutes=require("./routes/messageRoutes.js");
 const paymentRoutes = require("./routes/paymentRoutes.js");
 const searchRoutes = require("./routes/searchRoutes.js");
+const notificationRoutes = require("./routes/notificationRoutes.js");
 
 
 //using the routes
@@ -30,6 +31,7 @@ app.use(dashboardRoutes);
 app.use(postRoutes);
 app.use(paymentRoutes);
 app.use(searchRoutes);
+app.use(notificationRoutes);
 app.use(messageRoutes);
 
 

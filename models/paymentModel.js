@@ -28,7 +28,14 @@ let paymentDetails = async (userID, amount) =>{
     result = await query(sqlCommand);
     return result;
 }
-
+let insertIntoNotification = async (userID,payment) =>{
+    let sqlCommand = `SELECT COUNT(*) AS c FROM notification WHERE user_id = ${userID};`;
+    let result = await query(sqlCommand);
+    let count = result[0].c + 1;
+    sqlCommand = `INSERT INTO notification(id, user_id, content) VALUES (${count},${userID}, 'Payment ${payment} Successfull')`;
+    result = await query(sqlCommand);
+    return result;
+}
 
 
 
@@ -36,5 +43,6 @@ module.exports = {
     getUserInfo,
     getCurrency,
     updateCurrency,
-    paymentDetails
+    paymentDetails,
+    insertIntoNotification
 }

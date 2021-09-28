@@ -21,18 +21,18 @@ let getPostCount = async (userID) =>
 
 let getAllPosts = async (userID) =>
 {
-    // let sqlCommand = ` SELECT pid, pd.user_id, title, description, puser_name, puser_pass, post_cat, post_status, post_time, price, tag cat_name, uli.user_name 
-    // FROM post_details AS pd JOIN post_cat AS pc ON pd.pid = pc.cat_id JOIN user_login_info AS uli ON pd.user_id = uli.user_id WHERE pd.user_id = ${ userID } `
-    let sqlCommand = `SELECT * FROM post_details WHERE user_id = ${ userID };`
+    let sqlCommand = ` SELECT pid, pd.user_id, title, description, puser_name, puser_pass, post_cat, post_status, post_time, price, tag cat_name, uli.user_name 
+    FROM post_details AS pd JOIN post_cat AS pc ON pd.pid = pc.cat_id JOIN user_login_info AS uli ON pd.user_id = uli.user_id WHERE pd.user_id = ${ userID } `
+    // let sqlCommand = `SELECT * FROM post_details WHERE user_id = ${ userID };`
     let result = await query(sqlCommand);
     return result;
 }
 
 let getUserAllPosts = async (userID) =>
 {
-    // let sqlCommand = ` SELECT pid, pd.user_id, title, description, puser_name, puser_pass, post_cat, post_status, post_time, price, tag cat_name, uli.user_name 
-    // FROM post_details AS pd JOIN post_cat AS pc ON pd.pid = pc.cat_id JOIN user_login_info AS uli ON pd.user_id = uli.user_id WHERE pd.user_id = ${ userID } `
-    let sqlCommand = `SELECT * FROM post_details WHERE user_id != ${ userID };`
+    let sqlCommand = ` SELECT pid, pd.user_id, title, description, puser_name, puser_pass, post_cat, post_status, post_time, price, tag cat_name, uli.user_name 
+    FROM post_details AS pd JOIN post_cat AS pc ON pd.pid = pc.cat_id JOIN user_login_info AS uli ON pd.user_id = uli.user_id WHERE pd.user_id != ${ userID } `
+    // let sqlCommand = `SELECT * FROM post_details WHERE user_id != ${ userID };`
     let result = await query(sqlCommand);
     return result;
 }
