@@ -51,7 +51,7 @@
               <div class="inline fields">
                 <div class="sixteen wide field">
                   <label>Title</label>
-                  <input type="text" placeholder="Enter your post title" name="title" value="<%= data.post[0].title %>">
+                  <input id="title1" type="text" placeholder="Enter your post title" name="title">
                 </div>
               </div>
               <div class="inline fields">
@@ -66,23 +66,23 @@
               <div class="inline fields">
                 <div class="sixteen wide field">
                   <label>Price</label>
-                  <input type="text" placeholder="Enter your price" name="price" value="<%= data.post[0].price %>">
+                  <input id = "price2" type="text" placeholder="Enter your price" name="price">
                 </div>
               </div>
               <div class="inline fields">
                 <div class="sixteen wide field">
                   <label>Username</label>
-                  <input type="text" placeholder="Enter your username" name="username" value="<%= data.post[0].puser_name %>">
+                  <input id= "username2" type="text" placeholder="Enter your username" name="username">
                 </div>
               </div>
               <div class="field">
                 <label>Description</label>
-                <textarea placeholder="Add description" name="description"><%= data.post[0].description%></textarea>
+                <textarea id="description2" placeholder="Add description" name="description"></textarea>
               </div>
               <div class="inline fields">
                 <div class="sixteen wide field">
                   <label>Tags</label>
-                  <input type="text" placeholder="Enter tags" name="tags" value="<%= data.post[0].tag %>">
+                  <input id="tags2" type="text" placeholder="Enter tags" name="tags" >
                 </div>
               </div>
               <Button class="ui fluid primary button">Update Post</Button>
@@ -96,6 +96,35 @@
   </div>
 
   </div>
+  
+  
+  <script>
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let myObj = JSON.parse(this.responseText);
+            document.getElementById("title1").value = myObj.data.post[0].title;
+            document.getElementById("price2").value = myObj.data.post[0].price;
+            document.getElementById("username2").value = myObj.data.post[0].puser_name;
+            document.getElementById("description2").value = myObj.data.post[0].description;
+            document.getElementById("tags2").value = myObj.data.post[0].tag;
+            // console.log("ggg");
+             console.log("amit",myObj.data.post[0].pid)
+        }
+    };
+    xmlhttp.open("GET", "http://localhost:3000/editpost-info/<%= data.post[0].pid %>"
+        , true);
+    xmlhttp.send();
+    // fetch('http://localhost:3000/payform-info')
+    //     .then(response => response.json())
+    //     .then(json => {
+    //     // document.getElementById("content").innerHTML = JSON.stringify(json);
+    //     console.log(json)
+    // console.log(json)
+    // })
+</script>
+
+
 </body>
 
 <%- include("./partials/footer.ejs") %> 

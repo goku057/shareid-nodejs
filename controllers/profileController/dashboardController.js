@@ -17,7 +17,7 @@ let dashboardData = async (req, res) =>{
         dashboardTotalPost
 
     }
-    console.log("data 1" + data);
+
     res.render("dashboard.ejs", {data});
 }
 

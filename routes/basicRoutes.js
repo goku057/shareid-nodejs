@@ -8,6 +8,6 @@ const basicController = require("../controllers/basicController.js");
 router.get("/", basicController.home);
 router.get("/user-profile", basicController.userProfile)
 router.get("/user-dashboard", basicController.userDashboard)
-
+router.get("/purchase", basicController.purchase)
 
 module.exports = router;
