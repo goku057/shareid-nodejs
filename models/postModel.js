@@ -72,7 +72,7 @@ let buyPost = async (activeUser, uid, pid, curr) => {
     result = await query(sqlCommand);
     console.log(result)
     let currency = result[0].currency;
-    let finalCurr = curr - currency;
+    let finalCurr = currency - curr;
     console.log(" currency " + currency);
     console.log("curr " + curr);
     sqlCommand = `UPDATE user_info SET  currency = ${finalCurr} WHERE user_id = ${activeUser}`;
