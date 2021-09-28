@@ -72,7 +72,11 @@
                 </div>
                 <div class="extra content">
                   <div class="ui two buttons">
-                    <a href="/editpost/<%= post.pid %>"><button class="ui button primary">Purchase</button></a>
+                    <% if( data.curCurrency >= post.price){ %> 
+                    <a href="/purchase/pid=<%= post.pid %>&uid=<%= post.user_id %>"><button class="ui button primary">Purchase</button></a>
+                    <% } else { %>
+                     <div href=""><button class="ui button grey" disabled>You can not purchase this offer</button></div> 
+                    <% } %>  
                   </div>
                 </div>
               </div>
