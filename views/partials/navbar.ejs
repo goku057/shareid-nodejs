@@ -21,9 +21,7 @@
       <div class="ui dropdown simple item ">
         <i class="globe icon"></i>
         <div class="menu">
-          <a class="item">Omuk posted</a>
-          <a class="item">Buy premium</a>
-          <a class="item">LoL id availble</a>
+          <span id="item" style="color:black"></span>
         </div>
       </div>
       <div class="ui dropdown item">
@@ -31,7 +29,7 @@
         <div class="menu">
           <a class="item">Dashboard</a>
           <a class="item" href="/account-info">Account Information</a>
-          <a class="item" href="/pay-form">Payment</a>
+          <a class="item" id="payform" href="/pay-form">Payment</a>
           <a class="item">Logout</a>
         </div>
       </div>
@@ -39,3 +37,20 @@
     </div>
     
   </nav>
+  <script>
+    let xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            let myObj = JSON.parse(this.responseText);
+                            myObj.data.notificationresult.forEach(
+                                r => {
+                                    document.getElementById("item").innerHTML += r.content+"<br>";
+                                }
+                            )
+
+
+                        }
+                    };
+                    xmlhttp.open("GET", "http://localhost:3000/notification", true);
+                    xmlhttp.send();
+  </script>

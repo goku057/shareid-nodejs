@@ -13,7 +13,7 @@ let showEarned = async (activeUser) => {
     return result;
 }
 let showPaid = async (activeUser) => {
-    let sqlCommand = `SELECT SUM(pay_amount) as pay FROM transaction_history WHERE seller_id != '${activeUser}';`
+    let sqlCommand = `SELECT SUM(pay_amount) as pay FROM transaction_history WHERE buyer_id = '${activeUser}';`
     let result = await query(sqlCommand);
     return result;
 }

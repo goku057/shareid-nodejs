@@ -9,11 +9,11 @@ const {Publishable_Key, stripe} = require("../helpers/stripeConfig.js");
 let showPayForm = async (req, res)=>{
 
     let userID = id;
-    let currentAmount = await paymentModel.getCurrency(userID);
+    // let currentAmount = await paymentModel.getCurrency(userID);
     let title = "payment";
     let data = {
         pageTitle : title,
-        currentAmount
+        // currentAmount
     }
     res.render("pay-form", {data});
 
@@ -96,6 +96,7 @@ let payment = async (req, res) => {
         // console.log(totalAmount);
         await  paymentModel.updateCurrency(userID, totalAmount);
         await  paymentModel.paymentDetails(userID, paidAmount);
+        await  paymentModel.insertIntoNotification(userID,paidAmount);
         res.redirect("/pay-form")
     }) 
     .catch((err) => { 
