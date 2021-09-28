@@ -55,6 +55,21 @@ let editpost = async(req , res)=>
 }
 
 
+let editpost2 = async(req , res)=>
+{
+    //let pageTitle = "EditPost";
+    let post = await postModel.getPost(req.params.id);
+    let data =
+    {
+        //pageTitle,
+        post
+    }
+    res.json( { data });
+}
+
+
+
+
 let editpostUser = async (req , res)=>
 {
     console.log(req.params.id);
@@ -102,5 +117,6 @@ module.exports =
     showLatestPost,
     editpost, 
     editpostUser,
-    deletepost
+    deletepost,
+    editpost2
 }
