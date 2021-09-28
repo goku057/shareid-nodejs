@@ -6,6 +6,9 @@ const router = express.Router();
 const dashboardController = require("../../controllers/profileController/dashboardController.js");
 
 router.get("/dashboard", dashboardController.dashboardData);
+router.get("/dashboard-data", dashboardController.dashboardAjaxData);
+
+
 
 
 module.exports = router;
