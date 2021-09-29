@@ -582,7 +582,7 @@
 * In this project I faced database query issues.
 
 # Post management Feature
-* This feature helps to view the over-all information of a user. This feature was developed by Azizul Hakim (ID: 011181149).
+* This feature helps to view the over-all information of a user. This feature was developed by Mohammad Mostafizur Rahman (ID: 011181140).
 
 ## Codes for this features
 ### Routes
